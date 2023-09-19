@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futuristic Website</title>
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-QJcDXhgsRG5fYlkqQFXi4AqYdaxF+MVKK9+BUQ5brSB5pyFw+2zFvCRqcjPQTIoRwH0tAzrE2j7TsRXh4mVz9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Include your custom CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='flexbox2.css') }}">
+</head>
+<body>
+   <div class="flexbox1">
+    <div class="contaner1">
+        <i class="fas fa-camera fa-2x"></i> <!-- Camera icon -->
+        <img src="{{ url_for('static', filename='nature.jpeg') }}" alt="" class="contaner2">
+        <h1 >Seamlessly visualize quality</h1>
+        <p>Collaboratively administrate empowered markets via plug and play networks.</p>
+        <p><input type="submit" value="Here's why"></p>
+    </div>
+
+    <div class="contaner1"> 
+        <i class="fas fa-camera fa-2x"></i> <!-- Camera icon -->
+        <img src="{{ url_for('static', filename='nature2.jpeg') }}" alt="" class="contaner2">
+        <h1>Completely synergize</h1>
+        <p>Dramatically engage, seamlessly visualize quality intellectual capital without superior collaboration and idea-sharing.</p>
+        <input type="submit" value="Here's how">
+    </div>
+    <div class="contaner1">
+        <i class="fas fa-camera fa-2x"></i> <!-- Camera icon -->
+        <img src="{{ url_for('static', filename='nature3.jpeg') }}" alt="" class="contaner2">
+        <h1>Dynamically Procrastinate</h1>
+        <p>Completely synergize resource-taxing relationships via premier niche markets.</p>
+        <input type="submit" value="Read more">
+    </div>
+    </div>
+    <div class="flexbox2">
+        <div class="contaner3">
+            <i class="fas fa-camera fa-2x"></i> <!-- Camera icon -->
+            <img src="{{ url_for('static', filename='nature4.jpeg') }}" alt="" class="contaner2">
+            <h1>Best in class</h1>
+            <p>Imagine jumping into the boat and just letting it sail wherever the wind takes you...</p>
+            <input type="submit" value="Just do it...">
+        </div>
+        <div class="contaner3">
+            <i class="fas fa-camera fa-2x"></i> <!-- Camera icon -->
+            <img src="{{ url_for('static', filename='nature5.jpeg') }}" alt="" class="contaner2">
+            <h1>Dynamically innovate supply chains</h1>
+            <p>Holistically predominate extensible testing procedures for reliable supply chains.</p>
+            <input type="submit" value="Here's why">
+        </div>
+        <div class="contaner3">
+            <i class="fas fa-camera fa-2x"></i> <!-- Camera icon -->
+            <img src="{{ url_for('static', filename='nature6.jpeg') }}" alt="" class="contaner2">
+            <h1>Sanity check</h1>
+            <p>Objectively innovate empowered manufactured products whereas parallel platforms.</p>
+            <input type="submit" value="Stop here">
+        </div>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.contaner1,
+.contaner3 {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: white;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden; 
+  border-radius: 8px;
+}
+
+.contaner1:hover,
+.contaner3:hover {
+  transform: scale(1.05);
+  background-color: #00bcd4; 
+}
+
+.contaner1 .contaner2,
+.contaner3 .contaner2 {
+  width: 100%; 
+  height: auto; 
+  max-width: 320px; 
+  max-height: 180px; 
+  object-fit: cover; 
+  border-radius: 8px;
+  animation: zoomIn 0.5s ease-in-out; 
+}
+
+.contaner1 i,
+.contaner3 i {
+  font-size: 24px; 
+  color: #00bcd4;
+  margin: 10px auto; 
+  display: block; 
+}
+
+.contaner1 h1,
+.contaner3 h1 {
+  font-size: 24px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+.contaner1 p,
+.contaner3 p {
+  font-size: 16px;
+  text-align: center;
+}
+
+.contaner1 input[type="submit"],
+.contaner3 input[type="submit"] {
+  background-color: #00bcd4;
+  color: white;
+  border: none;
+  width: 150px;
+  height: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+  margin-top: 20px;
+  border-radius: 4px;
+}
+
+.contaner1 input[type="submit"]:hover,
+.contaner3 input[type="submit"]:hover {
+  background-color: #0097a7;
+  transform: translate3d(0, -5px, 0);
+}
+
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
