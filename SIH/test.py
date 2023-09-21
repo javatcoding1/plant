@@ -9,6 +9,9 @@ def flexbox2():
 @app.route('/flexbox2')
 def flexbox1():
     return render_template('flexbox2.html')
+@app.route('/index')
+def upload():
+    return render_template('index.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

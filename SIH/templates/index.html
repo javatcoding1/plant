@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ML App</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-image:   url ("/Users/jayanthmadhav/Desktop/SIH/static/background.jpg" ); /* Add your background image URL here */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    
+    .content {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .drag-drop-box {
+        border: 2px dashed #3498db;
+        background-color: #f2f2f2;
+        color: #333;
+        padding: 20px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .drag-drop-box p {
+        margin: 0;
+    }
+    
+    .drag-drop-box:hover {
+        background-color: #3498db;
+        color: #fff;
+    }
+    
+    #fileInput {
+        display: none;
+    }
+    
+    button[type="submit"] {
+        background-color: #27ae60;
+        color: #fff;
+        border: none;
+        padding: 15px 30px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    button[type="submit"]:hover {
+        background-color: #219150;
+    }
+    
+    #output {
+        text-align: center;
+        font-weight: bold;
+        color: #333;
+        margin-top: 20px;
+    }
+.drag-drop-box {
+    margin-bottom: 20px;
+}
+
+button[type="submit"] {
+    margin-top: 20px; 
+}
+
+#output {
+
+    margin-top: 20px;
+}
+
+
+    
+</style>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Machine Learning App</h1>
+            <form name="form" method="POST" action="/upload" enctype="multipart/form-data">
+                <div class="drag-drop-box" id="drag-drop-area">
+                    <p>Drag &amp; Drop or Click to Upload an Image</p>
+                    <label for="fileInput" class="clickable-label">Select Image</label> <!-- Add label element -->
+                    <input type="file" name="file" id="fileInput" accept="image/*">
+                </div>
+                <button type="submit" id="submitBtn">Run Analysis</button>
+            </form>
+            
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dragDropArea = document.getElementById('drag-drop-area');
+            const fileInput = document.getElementById('fileInput');
+            const clickableLabel = document.querySelector('.clickable-label'); // Select the label element
+        
+            dragDropArea.addEventListener('dragover', (e) => {
+                e.preventDefault();
+                dragDropArea.classList.add('active');
+            });
+        
+            dragDropArea.addEventListener('dragleave', () => {
+                dragDropArea.classList.remove('active');
+            });
+        
+            dragDropArea.addEventListener('drop', (e) => {
+                e.preventDefault();
+                dragDropArea.classList.remove('active');
+                const file = e.dataTransfer.files[0];
+                fileInput.files = e.dataTransfer.files;
+                const fileName = fileInput.files[0].name;
+                dragDropArea.querySelector('p').textContent = fileName;
+            });
+        
+            fileInput.addEventListener('change', () => {
+                const fileName = fileInput.files[0].name;
+                dragDropArea.querySelector('p').textContent = fileName;
+            });
+
+            // Trigger file input when label is clicked
+            clickableLabel.addEventListener('click', () => {
+                fileInput.click();
+            });
+        });
+    </script>
+</body>
+</html>
